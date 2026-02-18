@@ -1,0 +1,289 @@
+@import "tailwindcss";
+
+/* =========================================================
+   1) PALETAS BASE (las tuyas)
+   - Variables "crudas" (shades 50..950)
+   ========================================================= */
+:root{
+  /* --- Carbon Black (negros elegantes) --- */
+  --color-carbon-black-50:  #f3f3f1;
+  --color-carbon-black-100: #e8e8e3;
+  --color-carbon-black-200: #d1d1c7;
+  --color-carbon-black-300: #b9b9ac;
+  --color-carbon-black-400: #a2a290;
+  --color-carbon-black-500: #8b8b74;
+  --color-carbon-black-600: #6f6f5d;
+  --color-carbon-black-700: #535346;
+  --color-carbon-black-800: #38382e;
+  --color-carbon-black-900: #1c1c17;
+  --color-carbon-black-950: #131310;
+
+  /* --- Platinum (claros premium para superficies) --- */
+  --color-platinum-50:  #f2f3f3;
+  --color-platinum-100: #e5e6e6;
+  --color-platinum-200: #cacece;
+  --color-platinum-300: #b0b5b5;
+  --color-platinum-400: #969c9c;
+  --color-platinum-500: #7c8383;
+  --color-platinum-600: #636969;
+  --color-platinum-700: #4a4f4f;
+  --color-platinum-800: #313535;
+  --color-platinum-900: #191a1a;
+  --color-platinum-950: #111212;
+
+  /* --- Shadow Grey (neutros para textos/bordes/estados) --- */
+  --color-shadow-grey-50:  #f0f1f5;
+  --color-shadow-grey-100: #e1e3ea;
+  --color-shadow-grey-200: #c2c7d6;
+  --color-shadow-grey-300: #a4acc1;
+  --color-shadow-grey-400: #8690ac;
+  --color-shadow-grey-500: #677498;
+  --color-shadow-grey-600: #535d79;
+  --color-shadow-grey-700: #3e465b;
+  --color-shadow-grey-800: #292e3d;
+  --color-shadow-grey-900: #15171e;
+  --color-shadow-grey-950: #0e1015;
+
+  /* --- Golden Bronze (dorado "marca" principal) --- */
+  --color-golden-bronze-50:  #fbf7ea;
+  --color-golden-bronze-100: #f6efd5;
+  --color-golden-bronze-200: #eddfab;
+  --color-golden-bronze-300: #e4cf81;
+  --color-golden-bronze-400: #dbbf57;
+  --color-golden-bronze-500: #d2ae2d;
+  --color-golden-bronze-600: #a88c24;
+  --color-golden-bronze-700: #7e691b;
+  --color-golden-bronze-800: #544612;
+  --color-golden-bronze-900: #2a2309;
+  --color-golden-bronze-950: #1d1806;
+
+  /* --- Olive Bark (dorado cálido secundario) --- */
+  --color-olive-bark-50:  #faf6eb;
+  --color-olive-bark-100: #f4eed7;
+  --color-olive-bark-200: #e9dcaf;
+  --color-olive-bark-300: #decb87;
+  --color-olive-bark-400: #d3ba5f;
+  --color-olive-bark-500: #c8a937;
+  --color-olive-bark-600: #a0872c;
+  --color-olive-bark-700: #786521;
+  --color-olive-bark-800: #504316;
+  --color-olive-bark-900: #28220b;
+  --color-olive-bark-950: #1c1808;
+}
+
+/* =========================================================
+   2) ROLES (lo importante)
+   - Tema CLARO por defecto
+   ========================================================= */
+:root{
+  /* Base */
+  --bg:        var(--color-platinum-50);      /* fondo general */
+  --surface:   var(--color-olive-bark-500);     /* nav/cards/superficies */
+  --surface-2: var(--color-platinum-50);      /* variación para secciones */
+  --text:      var(--color-carbon-black-950); /* texto principal */
+  --muted:     var(--color-shadow-grey-700);  /* texto secundario */
+  --muted_li:     var(--color-shadow-grey-100);  /* texto secundario */
+  --border:    var(--color-shadow-grey-500);  /* bordes suaves */
+  --ring:      var(--color-golden-bronze-400);/* focus ring */
+
+  /* Marca (dorado) */
+  --brand:       var(--color-golden-bronze-500);
+  --brand-hover: var(--color-golden-bronze-600);
+  --brand-soft:  var(--color-olive-bark-100);
+  --brand-line:  var(--color-golden-bronze-300);
+
+  /* Mezclas para botones de superficie (para no depender de .dark) */
+  --surface-mix:       color-mix(in srgb, var(--surface) 92%, white 8%);
+  --surface-mix-hover: color-mix(in srgb, var(--surface) 85%, white 15%);
+}
+
+/* =========================================================
+   2.1) TEMA OSCURO AUTOMÁTICO (según sistema)
+   - Sin clase .dark
+   ========================================================= */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:        var(--color-carbon-black-950);
+    --surface:   var(--color-carbon-black-900);
+    --surface-2: var(--color-carbon-black-950);
+    --text:      var(--color-platinum-50);
+    --muted:     var(--color-shadow-grey-300);
+    --border:    var(--color-shadow-grey-950);
+    --ring:      var(--color-golden-bronze-400);
+
+    --brand:       var(--color-golden-bronze-500);
+    --brand-hover: var(--color-golden-bronze-400);
+    --brand-soft:  var(--color-olive-bark-950);
+    --brand-line:  var(--color-golden-bronze-700);
+
+    /* Mezclas en dark (mezclamos con negro) */
+    --surface-mix:       color-mix(in srgb, var(--surface) 92%, black 8%);
+    --surface-mix-hover: color-mix(in srgb, var(--surface) 85%, black 15%);
+  }
+}
+
+/* =========================================================
+   3) Hook para Tailwind 4 (CSS-first)
+   - Tokens para usar: bg-[color:var(--color-bg)] etc.
+   ========================================================= */
+@theme{
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+}
+
+/* =========================================================
+   4) Estilos globales
+   ========================================================= */
+html, body{
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* =========================================================
+   5) Componentes reutilizables
+   ========================================================= */
+@layer components{
+  /* Contenedor estándar */
+  .container-kt{
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Superficie (nav/cards) */
+  .surface{
+    background: var(--surface);
+    /* border: 1px solid var(--border); */
+  }
+
+  /* Botón principal (marca dorado) */
+  .btn-brand{
+    @apply inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-medium shadow-sm transition;
+    background: var(--brand);
+    color: #fff;
+  }
+  .btn-brand:hover{
+    background: var(--brand-hover);
+  }
+  .btn-brand:focus-visible{
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  /* Botón secundario (superficie) */
+  .btn-surface{
+    @apply inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-medium shadow-sm transition;
+    background: var(--surface-mix);
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-surface:hover{
+    background: var(--surface-mix-hover);
+  }
+
+  /* Texto muted */
+  .text-muted{
+    color: var(--muted);
+  }
+}
+
+/* =========================================================
+   6) Utilities propias
+   ========================================================= */
+@layer utilities{
+  .text-shadow-soft{
+    text-shadow: 0 6px 24px rgba(0,0,0,.35);
+  }
+}
+
+
+@theme{
+    /* Colores RGB */
+
+--color-shadow-grey-50: rgb(240 241 245);
+--color-shadow-grey-100: rgb(225 227 234);
+--color-shadow-grey-200: rgb(194 199 214);
+--color-shadow-grey-300: rgb(164 172 193);
+--color-shadow-grey-400: rgb(134 144 172);
+--color-shadow-grey-500: rgb(103 116 152);
+--color-shadow-grey-600: rgb(83 93 121);
+--color-shadow-grey-700: rgb(62 70 91);
+--color-shadow-grey-800: rgb(41 46 61);
+--color-shadow-grey-900: rgb(21 23 30);
+--color-shadow-grey-950: rgb(14 16 21);
+
+--color-olive-bark-50: rgb(250 246 235);
+--color-olive-bark-100: rgb(244 238 215);
+--color-olive-bark-200: rgb(233 220 175);
+--color-olive-bark-300: rgb(222 203 135);
+--color-olive-bark-400: rgb(211 186 95);
+--color-olive-bark-500: rgb(200 169 55);
+--color-olive-bark-600: rgb(160 135 44);
+--color-olive-bark-700: rgb(120 101 33);
+--color-olive-bark-800: rgb(80 67 22);
+--color-olive-bark-900: rgb(40 34 11);
+--color-olive-bark-950: rgb(28 24 8);
+
+--color-white-50: rgb(240 240 245);
+--color-white-100: rgb(224 224 235);
+--color-white-200: rgb(194 194 214);
+--color-white-300: rgb(163 163 194);
+--color-white-400: rgb(133 133 173);
+--color-white-500: rgb(102 102 153);
+--color-white-600: rgb(82 82 122);
+--color-white-700: rgb(61 61 92);
+--color-white-800: rgb(41 41 61);
+--color-white-900: rgb(20 20 31);
+--color-white-950: rgb(14 14 21);
+
+--color-golden-bronze-50: rgb(251 247 234);
+--color-golden-bronze-100: rgb(246 239 213);
+--color-golden-bronze-200: rgb(237 223 171);
+--color-golden-bronze-300: rgb(228 207 129);
+--color-golden-bronze-400: rgb(219 191 87);
+--color-golden-bronze-500: rgb(210 174 45);
+--color-golden-bronze-600: rgb(168 140 36);
+--color-golden-bronze-700: rgb(126 105 27);
+--color-golden-bronze-800: rgb(84 70 18);
+--color-golden-bronze-900: rgb(42 35 9);
+--color-golden-bronze-950: rgb(29 24 6);
+
+--color-shadow-grey-50: rgb(241 241 244);
+--color-shadow-grey-100: rgb(227 227 232);
+--color-shadow-grey-200: rgb(199 199 209);
+--color-shadow-grey-300: rgb(171 171 186);
+--color-shadow-grey-400: rgb(143 143 163);
+--color-shadow-grey-500: rgb(115 115 140);
+--color-shadow-grey-600: rgb(92 92 112);
+--color-shadow-grey-700: rgb(69 69 84);
+--color-shadow-grey-800: rgb(46 46 56);
+--color-shadow-grey-900: rgb(23 23 28);
+--color-shadow-grey-950: rgb(16 16 20);
+
+
+
+}
+
+
+/*
+Personalizar colores, fuentes, tamaños (antes tailwind.config) Usa @theme:
+class="text-[color:var(--color-primary)]"
+
+Crear clases personalizadas:
+@layer components {
+  .btn-primary {
+    @apply bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-500;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255,255,255,0.7);
+  }
+}
+*/
+
+

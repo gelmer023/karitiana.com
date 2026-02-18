@@ -1,0 +1,165 @@
+---
+import astroLetra from '../assets/kt_le.svg';
+import astroLogo from '../assets/kt_log.svg';
+import background from '../assets/hero.webp';
+import karen from "../assets/Karen.jpg";
+---
+
+<header class="surface dark:surface">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <div class="md:flex md:items-center md:gap-12">
+        <a class="block  text-teal-600 dark:text-teal-600" href="#">
+          <span class="sr-only"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Hogar</font></font></span>
+          <img class="hidden md:block h-15 w-auto" src={astroLetra.src} alt="Karitiana" />
+		  <img class="h-10 w-10 rounded-full object-cover md:hidden" src={astroLogo.src} alt="Logo Karitiana">
+        </a>
+      </div>
+
+      <div class="hidden md:block">
+        <nav aria-label="Global">
+          <ul class="flex items-center gap-6 text-sm">
+            <li>
+              <a class="text transition hover:text-muted" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+                Inicio
+              </font></font></a>
+            </li>
+
+            <li>
+              <a class="text transition hover:text-muted" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+                Servicios
+              </font></font></a>
+            </li>
+
+            <li>
+              <a class="text transition hover:text-muted" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+                Acerca de
+              </font></font></a>
+            </li>
+
+            <li>
+              <a class="text transition hover:text-muted" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+                Masterclass
+              </font></font></a>
+            </li>
+
+            <li>
+              <a class="text transition hover:text-muted" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+                Contacto
+              </font></font></a>
+            </li>
+
+            <li>
+              <a class="text transition hover:text-muted" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+                Blog
+              </font></font></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div class="sm:flex sm:gap-4">
+          <a class="rounded-md bg-[color:var(--brand)] px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-[color:var(--brand-hover)]" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+            Acceso
+          </font></font></a>
+
+          <div class="hidden sm:flex">
+            <a class="rounded-md bg-[color:var(--surface-mix)] px-5 py-2.5 text-sm font-medium text-[color:var(--text)] shadow-sm transition hover:bg-[color:var(--brand-hover)]" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+              Registro
+            </font></font></a>
+          </div>
+        </div>
+
+        <div class="block md:hidden">
+          <button class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section
+  class="relative lg:grid lg:min-h-screen lg:place-content-center bg-cover bg-bottom bg-no-repeat"
+  style={`background-image: url(${background.src})`}
+>
+  <!-- Overlay para que el texto se lea -->
+  <div class="absolute inset-0 bg-black/75"></div>
+
+  <div class="relative z-10 mx-auto w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+    <div class="max-w-prose">
+		<h1 class="text-4xl sm:text-5xl font-bold text-white">
+
+  <span class="block md:hidden">
+	Miradas
+	<span class="block text-[color:var(--brand-line)]">Perfectas</span>
+  </span>
+
+  <span class="hidden md:block">
+    El estilo es una forma de decir quién eres,
+    <span class="block text-[color:var(--brand-line)]">sin tener que hablar</span>
+  </span>
+
+</h1>
+
+
+
+      <div class="mt-4 flex gap-4 sm:mt-6">
+        <a
+          class="inline-block rounded bg-[color:var(--brand)] px-5 py-3 font-medium  shadow-sm transition hover:bg-[color:var(--brand-hover)]"
+          href="#"
+        >
+          Ver servicios
+        </a>
+
+        <a
+           class="inline-block rounded bg-[color:var(--surface-mix)] px-5 py-3 font-medium text-[color:var(--text)] shadow-sm transition hover:bg-[color:var(--brand-hover)]"
+          href="#"
+        >
+          Contáctanos
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container-kt py-10 sm:py-14">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
+
+      <!-- Texto -->
+      <div class="surface rounded-2xl p-6 sm:p-8">
+        <h2 class="text-2xl sm:text-3xl font-semibold">
+          Karen Barragán
+        </h2>
+
+        <p class="mt-4 text-muted leading-relaxed">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit porttitor eros placerat imperdiet hac vel, laoreet duis euismod ad quam hendrerit urna vehicula ante scelerisque ultricies egestas. Ut tristique mi tortor fames neque dignissim nunc penatibus nibh, cum habitant metus lacus cursus varius aenean quisque habitasse, parturient platea mauris senectus risus curae primis ultrices. Ante cras maecenas torquent iaculis sodales sociosqu volutpat pharetra netus consequat, ultrices congue mauris diam purus pulvinar curae accumsan vestibulum, risus sollicitudin himenaeos hac pellentesque penatibus eleifend praesent tincidunt. Molestie per vulputate habitasse ante ornare luctus vel rhoncus cursus euismod, laoreet ad class consequat sem nascetur imperdiet sociis tempor felis, quisque aliquam tellus litora risus sagittis in accumsan tristique.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a class="btn-brand" href="#contacto">Agendar cita</a>
+          <a class="btn-surface" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+
+      <!-- Imagen (vertical, controlada con aspect ratio) -->
+      <div class="surface rounded-2xl p-3 sm:p-4">
+        <div class="overflow-hidden rounded-xl aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/5]">
+          <img
+            src={karen.src}
+            alt="Karen Barragán - Karitiana"
+            class="h-full w-full object-cover object-center"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
