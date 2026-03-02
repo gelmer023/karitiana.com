@@ -3,19 +3,19 @@ import astroLetra from "../assets/kt_le.svg";
 import astroLogo from "../assets/kt_log.svg";
 ---
 
-
 <header class="sticky top-0 z-[9999] border-b border-[color:var(--border)] bg-[color:var(--surface)]/85 backdrop-blur-md">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
+      <!-- Logo -->
       <div class="md:flex md:items-center md:gap-12">
         <a class="block" href="#welcome">
           <span class="sr-only">Inicio</span>
-
-          <img class="hidden md:block h-12 w-auto" src={astroLetra.src} alt="Karitiana" />
+          <img class="hidden h-12 w-auto md:block" src={astroLetra.src} alt="Karitiana" />
           <img class="h-10 w-10 md:hidden" src={astroLogo.src} alt="Logo Karitiana" />
         </a>
       </div>
 
+      <!-- Nav desktop -->
       <div class="hidden md:block">
         <nav aria-label="Global">
           <ul class="flex items-center gap-6 text-sm">
@@ -29,27 +29,114 @@ import astroLogo from "../assets/kt_log.svg";
         </nav>
       </div>
 
+      <!-- Acciones + botón mobile -->
       <div class="flex items-center gap-4">
-        <div class="sm:flex sm:gap-4">
-          <a class="rounded-md bg-[color:var(--brand)] px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-[color:var(--brand-hover)]" href="#">
+        <div class="hidden sm:flex sm:gap-4">
+          <a
+            class="rounded-md bg-[color:var(--brand)] px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-[color:var(--brand-hover)]"
+            href="#"
+          >
             Acceso
           </a>
 
-          <div class="hidden sm:flex">
-            <a class="rounded-md bg-[color:var(--surface-mix)] px-5 py-2.5 text-sm font-medium text-[color:var(--text)] shadow-sm transition hover:bg-[color:var(--brand-hover)]" href="#">
-              Registro
-            </a>
-          </div>
+          <a
+            class="rounded-md bg-[color:var(--surface-mix)] px-5 py-2.5 text-sm font-medium text-[color:var(--text)] shadow-sm transition hover:opacity-90"
+            href="#"
+          >
+            Registro
+          </a>
         </div>
 
+        <!-- Botón hamburguesa -->
         <div class="block md:hidden">
-          <button class="rounded-sm bg-[color:var(--surface-mix)] p-2 text-[color:var(--text)] transition hover:opacity-80">
+          <button
+            id="menuBtn"
+            type="button"
+            class="rounded-sm bg-[color:var(--surface-mix)] p-2 text-[color:var(--text)] transition hover:opacity-80"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            aria-label="Abrir menú"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Panel móvil -->
+  <div
+    id="mobileMenu"
+    class="md:hidden hidden border-t border-[color:var(--border)] bg-[color:var(--surface)]/95 backdrop-blur-md"
+  >
+    <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
+      <nav aria-label="Menú móvil">
+        <ul class="grid gap-1 text-sm">
+          <li><a class="mobile-link block rounded-xl px-3 py-2 hover:bg-[color:var(--surface-mix)]" href="#welcome">Inicio</a></li>
+          <li><a class="mobile-link block rounded-xl px-3 py-2 hover:bg-[color:var(--surface-mix)]" href="#servicios">Servicios</a></li>
+          <li><a class="mobile-link block rounded-xl px-3 py-2 hover:bg-[color:var(--surface-mix)]" href="#about">Acerca de</a></li>
+          <li><a class="mobile-link block rounded-xl px-3 py-2 hover:bg-[color:var(--surface-mix)]" href="#masterclass">Masterclass</a></li>
+          <li><a class="mobile-link block rounded-xl px-3 py-2 hover:bg-[color:var(--surface-mix)]" href="#contacto">Contacto</a></li>
+          <li><a class="mobile-link block rounded-xl px-3 py-2 hover:bg-[color:var(--surface-mix)]" href="#blog">Blog</a></li>
+        </ul>
+
+        <!-- Acciones en móvil -->
+        <div class="mt-3 grid gap-2">
+          <a
+            class="mobile-link w-full rounded-xl bg-[color:var(--brand)] px-4 py-2 text-center text-sm font-medium text-white hover:bg-[color:var(--brand-hover)]"
+            href="#"
+          >
+            Acceso
+          </a>
+          <a
+            class="mobile-link w-full rounded-xl bg-[color:var(--surface-mix)] px-4 py-2 text-center text-sm font-medium text-[color:var(--text)] hover:opacity-90"
+            href="#"
+          >
+            Registro
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <script is:inline>
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("mobileMenu");
+
+    const closeMenu = () => {
+      if (!menu || !btn) return;
+      menu.classList.add("hidden");
+      btn.setAttribute("aria-expanded", "false");
+    };
+
+    const openMenu = () => {
+      if (!menu || !btn) return;
+      menu.classList.remove("hidden");
+      btn.setAttribute("aria-expanded", "true");
+    };
+
+    btn?.addEventListener("click", () => {
+      if (!menu) return;
+      const isOpen = !menu.classList.contains("hidden");
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    // Cierra al hacer click en un link del menú
+    menu?.addEventListener("click", (e) => {
+      if (e.target.closest("a")) closeMenu();
+    });
+
+    // Cierra si haces click fuera del header
+    document.addEventListener("click", (e) => {
+      const header = e.target.closest("header");
+      if (!header) closeMenu();
+    });
+
+    // Si pasas a desktop, asegura que el menú móvil quede cerrado
+    const mq = window.matchMedia("(min-width: 768px)");
+    const onMq = (ev) => { if (ev.matches) closeMenu(); };
+    mq.addEventListener?.("change", onMq);
+  </script>
 </header>
