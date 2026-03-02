@@ -1,0 +1,47 @@
+---
+import karen from "../assets/Karen.jpg";
+---
+<section id="about">
+  <div class="container-kt py-10 sm:py-14">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-[2fr_1fr] md:items-center  items-stretch rounded-2xl">
+      <!-- Texto -->
+      <div class="surface rounded-2xl p-6 sm:p-8 h-full flex flex-col ">
+        <h2 class="text-2xl sm:text-3xl font-semibold">Karen Barragán</h2>
+
+        <p class="mt-4 text-muted leading-relaxed text-justify">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit porttitor eros
+          placerat imperdiet hac vel, laoreet duis euismod ad quam hendrerit
+          urna vehicula ante scelerisque ultricies egestas. Ut tristique mi
+          tortor fames neque dignissim nunc penatibus nibh, cum habitant metus
+          lacus cursus varius aenean quisque habitasse, parturient platea mauris
+          senectus risus curae primis ultrices. Ante cras maecenas torquent
+          iaculis sodales sociosqu volutpat pharetra netus consequat, ultrices
+          congue mauris diam purus pulvinar curae accumsan vestibulum, risus
+          sollicitudin himenaeos hac pellentesque penatibus eleifend praesent
+          tincidunt. Molestie per vulputate habitasse ante ornare luctus vel
+          rhoncus cursus euismod, laoreet ad class consequat sem nascetur
+          imperdiet sociis tempor felis, quisque aliquam tellus litora risus
+          sagittis in accumsan tristique.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a class="btn-brand" href="#contacto">Agendar cita</a>
+          <a class="btn-surface" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+
+      <!-- Imagen (vertical, controlada con aspect ratio) -->
+      <div class="surface rounded-2xl p-3 sm:p-4 h-full flex justify-center shadow-lg rounded-2xl">
+        <div
+          class="h-full w-full max-w-sm overflow-hidden rounded-xl aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/5]"
+        >
+          <img
+            src={karen.src}
+            alt="Karen Barragán - Karitiana"
+            class="h-full w-full object-cover object-center"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
