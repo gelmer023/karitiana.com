@@ -28,19 +28,18 @@ const visibles = servicios.slice(0, 6);
 const extra = servicios.slice(6);
 ---
 
-<section id="servicios">
-  <div class="container-kt py-14 sm:py-16">
+<section id="servicios" class="bg-[color:var(--bg)]">
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
     <div class="max-w-2xl">
-      <h2 class="text-3xl sm:text-4xl font-semibold">Servicios</h2>
-      <p class="mt-3 text-muted">
+      <h2 class="text-3xl font-semibold text-[color:var(--text)] sm:text-4xl">Servicios</h2>
+      <p class="mt-3 text-[color:var(--muted)]">
         Descubre los tratamientos ideales para resaltar tu mirada.
       </p>
     </div>
 
-    <!-- Grid inicial (solo algunos) -->
     <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {visibles.map((s) => (
-        <article class="surface relative overflow-hidden rounded-2xl shadow-sm transition hover:shadow-lg">
+        <article class="relative overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] shadow-sm transition hover:shadow-lg">
           <img src={s.imagen} alt={s.titulo} class="w-full aspect-[4/3] object-cover" loading="lazy" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
 
@@ -68,11 +67,12 @@ const extra = servicios.slice(6);
       ))}
     </div>
 
-    <!-- Ver más / Ver menos (sin JS) -->
     {extra.length > 0 && (
       <details class="mt-8 group">
-        <summary class="cursor-pointer list-none inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-sm font-medium shadow-sm transition"
-          style="background: var(--surface-mix); border: 1px solid var(--border); color: var(--text);">
+        <summary
+          class="cursor-pointer list-none inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold shadow-sm transition hover:opacity-90"
+          style="background: var(--surface-mix); border: 1px solid var(--border); color: var(--text);"
+        >
           <span class="group-open:hidden">Ver más servicios</span>
           <span class="hidden group-open:inline">Ver menos</span>
           <span class="transition group-open:rotate-180">▾</span>
@@ -80,7 +80,7 @@ const extra = servicios.slice(6);
 
         <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {extra.map((s) => (
-            <article class="surface relative overflow-hidden rounded-2xl shadow-sm transition hover:shadow-lg">
+            <article class="relative overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] shadow-sm transition hover:shadow-lg">
               <img src={s.imagen} alt={s.titulo} class="w-full aspect-[4/3] object-cover" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
 

@@ -1,39 +1,55 @@
 ---
 import karen from "../assets/Karen.jpg";
 ---
-<section id="about">
-  <div class="container-kt py-10 sm:py-14">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-[2fr_1fr] md:items-center  items-stretch rounded-2xl">
-      <!-- Texto -->
-      <div class="surface rounded-2xl p-6 sm:p-8 h-full flex flex-col ">
-        <h2 class="text-2xl sm:text-3xl font-semibold">Karen Barragán</h2>
 
-        <p class="mt-4 text-muted leading-relaxed text-justify">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit porttitor eros
-          placerat imperdiet hac vel, laoreet duis euismod ad quam hendrerit
-          urna vehicula ante scelerisque ultricies egestas. Ut tristique mi
-          tortor fames neque dignissim nunc penatibus nibh, cum habitant metus
-          lacus cursus varius aenean quisque habitasse, parturient platea mauris
-          senectus risus curae primis ultrices. Ante cras maecenas torquent
-          iaculis sodales sociosqu volutpat pharetra netus consequat, ultrices
-          congue mauris diam purus pulvinar curae accumsan vestibulum, risus
-          sollicitudin himenaeos hac pellentesque penatibus eleifend praesent
-          tincidunt. Molestie per vulputate habitasse ante ornare luctus vel
-          rhoncus cursus euismod, laoreet ad class consequat sem nascetur
-          imperdiet sociis tempor felis, quisque aliquam tellus litora risus
-          sagittis in accumsan tristique.
+<section id="about" class="bg-[color:var(--bg)]">
+  <div class="mx-auto max-w-7xl px-4 py-10 sm:py-14 sm:px-6 lg:px-8">
+    <div class="grid gap-6 md:grid-cols-[2fr_1fr] md:items-stretch">
+      <!-- Texto -->
+      <div
+        class="rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] p-6 shadow-sm sm:p-8 flex flex-col"
+      >
+        <h2 class="text-2xl font-semibold text-[color:var(--text)] sm:text-3xl">
+          Karen Barragán
+        </h2>
+
+        <p class="mt-4 leading-relaxed text-[color:var(--muted)] text-justify">
+          Lorem ipsum dolor sit amet consectetur adipiscing, elit fermentum
+          sodales purus ultrices a, eu vitae vulputate quam netus. Velit aliquet
+          consequat magna facilisi pellentesque facilisis cras, torquent vitae
+          leo proin eu ultricies vivamus ad, habitant arcu urna tellus malesuada
+          mus. Ultricies laoreet nec habitasse facilisis proin facilisi risus
+          diam aenean, ut ligula turpis primis orci magnis per duis, nibh
+          penatibus class pulvinar ornare purus eu consequat.
+          
+          Montes aliquam
+          turpis ligula commodo hendrerit senectus facilisis venenatis dictumst,
+          cum est facilisi erat etiam tempor augue mauris aptent, donec dui at
+          lacinia mi quisque interdum sodales. Nam donec fames ridiculus
+          condimentum neque risus ac ligula tempus suscipit conubia ad nostra
+          tellus justo, integer id sociosqu per habitasse mollis pulvinar eu
+          rhoncus himenaeos torquent tempor etiam ut. Malesuada proin diam
+          dignissim ultrices per odio sed, luctus senectus hendrerit porttitor
+          ante fames imperdiet tellus, mollis placerat egestas facilisis
+          accumsan feugiat.
         </p>
 
         <div class="mt-6 flex flex-wrap gap-3">
-          <a class="btn-brand" href="#contacto">Agendar cita</a>
-          <a class="btn-surface" href="#servicios">Ver servicios</a>
+          <a class="k-btn-brand hover:brightness-110" href="#contacto"
+            >Agendar cita</a
+          >
+          <a class="k-btn-surface hover:opacity-90" href="#servicios"
+            >Ver servicios</a
+          >
         </div>
       </div>
 
-      <!-- Imagen (vertical, controlada con aspect ratio) -->
-      <div class="surface rounded-2xl p-3 sm:p-4 h-full flex justify-center shadow-lg rounded-2xl">
+      <!-- Imagen -->
+      <div
+        class="rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel)] p-3 shadow-sm sm:p-4 flex items-center justify-center"
+      >
         <div
-          class="h-full w-full max-w-sm overflow-hidden rounded-xl aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/5]"
+          class="w-full max-w-sm overflow-hidden rounded-xl aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/5]"
         >
           <img
             src={karen.src}
@@ -45,3 +61,4 @@ import karen from "../assets/Karen.jpg";
       </div>
     </div>
   </div>
+</section>

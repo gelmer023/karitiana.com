@@ -3,7 +3,7 @@ import astroLetra from "../assets/kt_le.svg";
 import astroLogo from "../assets/kt_log.svg";
 ---
 
-<header class="sticky top-0 z-[9999] border-b border-[color:var(--border)] bg-[color:var(--surface)]/85 backdrop-blur-md">
+<header class="fixed top-0 left-0 right-0 z-[9999]  border-b border-[color:var(--border)] bg-[color:var(--surface)]/85 backdrop-blur-md">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <!-- Logo -->
@@ -19,12 +19,12 @@ import astroLogo from "../assets/kt_log.svg";
       <div class="hidden md:block">
         <nav aria-label="Global">
           <ul class="flex items-center gap-6 text-sm">
-            <li><a class="text transition hover:text-muted" href="#welcome">Inicio</a></li>
-            <li><a class="text transition hover:text-muted" href="#servicios">Servicios</a></li>
-            <li><a class="text transition hover:text-muted" href="#about">Acerca de</a></li>
-            <li><a class="text transition hover:text-muted" href="#masterclass">Masterclass</a></li>
-            <li><a class="text transition hover:text-muted" href="#contacto">Contacto</a></li>
-            <li><a class="text transition hover:text-muted" href="#blog">Blog</a></li>
+            <li><a class="text-[color:var(--text)] transition hover:text-[color:var(--muted)]" href="#welcome">Inicio</a></li>
+            <li><a class="text-[color:var(--text)] transition hover:text-[color:var(--muted)]" href="#servicios">Servicios</a></li>
+            <li><a class="text-[color:var(--text)] transition hover:text-[color:var(--muted)]" href="#about">Acerca de</a></li>
+            <li><a class="text-[color:var(--text)] transition hover:text-[color:var(--muted)]" href="#masterclass">Masterclass</a></li>
+            <li><a class="text-[color:var(--text)] transition hover:text-[color:var(--muted)]" href="#contacto">Contacto</a></li>
+            <li><a class="text-[color:var(--text)] transition hover:text-[color:var(--muted)]" href="#blog">Blog</a></li>
           </ul>
         </nav>
       </div>
@@ -48,7 +48,7 @@ import astroLogo from "../assets/kt_log.svg";
         </div>
 
         <!-- Botón hamburguesa -->
-        <div class="block md:hidden">
+        <div class="block md:hidden " >
           <button
             id="menuBtn"
             type="button"
@@ -69,7 +69,7 @@ import astroLogo from "../assets/kt_log.svg";
   <!-- Panel móvil -->
   <div
     id="mobileMenu"
-    class="md:hidden hidden border-t border-[color:var(--border)] bg-[color:var(--surface)]/95 backdrop-blur-md"
+    class="md:hidden hidden border-t border-[color:var(--border)] bg-[color:var(--surface)]/95 text-[color:var(--text)] transition hover:text-[color:var(--muted)] backdrop-blur-md"
   >
     <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
       <nav aria-label="Menú móvil">
